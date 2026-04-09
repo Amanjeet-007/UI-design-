@@ -80,7 +80,7 @@ nav {
   z-index: 99;
 }
 .logo {
-  background-image: url(./src/images/logo.png);
+  background-image: url(./src/images/logo.webp);
   /* border: 2px solid red; */
   height: 105px;
   width: 200px;
