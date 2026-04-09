@@ -5,6 +5,10 @@
   --sec-color: #c08552;
   --third-color: #8c5a3c;
   --fourth-color: #4b2e2b;
+
+  /* fonts */
+  --cursive: "Pacifico", cursive;
+  --moon-text: "Rubik Moonrocks", sans-serif;
 }
 
 * {
@@ -23,45 +27,45 @@ html {
   scrollbar-width: none;
   font-family: sans-serif;
 }
-a{
-    text-decoration: none;
-    color: var(--fourth-color);
+a {
+  text-decoration: none;
+  color: var(--fourth-color);
 }
-.about_me{
-    height: 400px;
-    width: 500px;
-    position: fixed;
-    top: 25%;
-    left: 40%;
-    background-color: var(--sec-color);
-    z-index: 99;
-    border-radius: 10px;
-    scale: .3;
-    opacity: 0;
-    transform-origin: center;
-    transition: .3s;
-    background-origin: center;
-    /* position: relative; */
+.about_me {
+  height: 400px;
+  width: 500px;
+  position: fixed;
+  top: 25%;
+  left: 40%;
+  background-color: var(--sec-color);
+  z-index: 99;
+  border-radius: 10px;
+  scale: 0.3;
+  opacity: 0;
+  transform-origin: center;
+  transition: 0.3s;
+  background-origin: center;
+  /* position: relative; */
 }
-.about_me .cut{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    cursor: pointer;
+.about_me .cut {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
 }
-.sense{
-    height: 100vh;
-    width: 100vw;
-    position: absolute;
+.sense {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
 }
-#home{
-    position: absolute;
-    top: 0px;
-    width: 100%;
-    height: 20px;
+#home {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  height: 20px;
 }
 nav {
   position: fixed;
@@ -109,35 +113,38 @@ li {
   box-shadow: 2px 2px 3px var(--sec-color);
   transition: 0.3s;
   margin-left: 50px;
-  font-family: "Pacifico", cursive;
+  font-family: var(--cursive);
 }
 li:hover {
   scale: 1.05;
   box-shadow: 3px 3px 5px var(--sec-color);
 }
-.info{
-    width: 66%;
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    font-weight: 600;
-    justify-content: space-around;
-    cursor: zoom-in;
+.info {
+  width: 66%;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  font-weight: 600;
+  justify-content: space-around;
+  cursor: zoom-in;
 }
 
 /* first page */
 .first {
   height: 100vh;
-  margin-left: 20vw;
   width: 80vw;
+  margin-left: 20vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   color: var(--primary-color);
-  font-family: "Rubik Moonrocks", sans-serif;
+  font-family: var(--moon-text);
   font-weight: 400;
   font-style: normal;
+  position: absolute;
+  right: 0px;
+  
 }
 .first h1 {
   letter-spacing: 2px;
@@ -146,34 +153,148 @@ li:hover {
   position: relative;
 }
 .first h1 span {
-  font-family: "Pacifico", cursive;
+  font-family: var(--cursive);
   position: absolute;
   font-size: 30px;
   left: 150px;
 }
-.astro{
-    height: 80px;
-    width: 80px;
-    overflow: hidden;
-    /* background-color: red; */
-    position: absolute;
-    right: 130px;
-    top: 200px;
-    border-radius: 50%;
-    font-size: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 2px 2px 4px  #c08552;
+.astro {
+  height: 80px;
+  width: 80px;
+  overflow: hidden;
+  /* background-color: red; */
+  position: absolute;
+  right: 130px;
+  top: 200px;
+  border-radius: 50%;
+  font-size: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 2px 2px 4px #c08552;
 }
 
 /* second */
 .second {
   position: relative;
   height: 100vh;
+  right: 0px;
+  width: full;
+  display: flex;
+  margin-top: 100vh;
+}
+.designs{
+  width: 80%;
+  height: 80vh;
+  margin-left: 17vw;
+  margin-top: 4vh;
+  z-index: 100000;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.card{
+  height: 200px;
+  width: 300px;
+  margin: 10px 20px;
+  border: 5px solid var(--third-color);
+  border-radius: 5px;
 }
 
-#desingsPath{
-    position: absolute;
-    top: 0px;
+#desingsPath {
+  position: absolute;
+  top: 0px;
+}
+.filters {
+  position: absolute;
+  bottom: 40px;
+  left: 40%;
+  border-radius: 45px;
+  width: 400px;
+  height: 60px;
+  color: #4b2e2b;
+  display: flex;
+}
+.filters ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+/* third */
+.third {
+  height: 100vh;
+  width: 80vw;
+  margin-left: 20vw;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.third h3 {
+  font-family: var(--cursive);
+}
+.third #connect {
+  position: absolute;
+  top: 0px;
+}
+.third form {
+  background-color: var(--primary-sec-color);
+  padding: 40px 70px;
+  border-radius: 10px;
+  min-height: 60vh;
+  position: relative;
+}
+form input,
+form textarea {
+  width: 250px;
+  height: 50px;
+  padding: 3px 10px;
+  border: 2px solid var(--third-color);
+  border-radius: 10px 20px 5px;
+  letter-spacing: 1px;
+  font-family: var(--cursive);
+
+}
+
+form textarea {
+  width: 100%;
+  margin: 10px 0px;
+  padding: 10px;
+  height: 100px;
+}
+form button {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50%;
+  align-self: center;
+  width: 60%;
+  align-self: flex-end;
+  padding: 10px;
+  border: 2px solid var(--third-color);
+  border-radius: 20px 5px 10px;
+  font-family: var(--cursive);
+  background-color: var(--fourth-color);
+  color: var(--primary-color);
+  font-size: 20px;
+  cursor: pointer;
+
+}
+.social_media{
+  display: flex;
+  width: 100%;
+  height: min-content;
+  left: 0;
+  position: absolute;
+  bottom: 10%;
+  color: var(--fourth-color);
+}
+.social_media ul{
+  margin: 0%;
+  display: flex;
+  width: 100%;
+  flex-direction: row;
 }
