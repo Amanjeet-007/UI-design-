@@ -72,61 +72,61 @@ const projects = [
   {
     name: "Instagram Brand Post Design for Coffee Shop",
     link: "https://behance.net/demo-coffee-brand-post",
-    img: "/src/images/coffee-brand-post.webp",
+    img: "./src/images/coffee-brand-post.webp",
     category: "Social Media Design"
   },
   {
     name: "Modern Restaurant Menu Flyer",
     link: "https://behance.net/demo-restaurant-menu",
-    img: "/src/images/restaurant-menu-flyer.webp",
+    img: "./src/images/restaurant-menu-flyer.webp",
     category: "Flyer Design"
   },
   {
     name: "Real Estate Promotional Banner",
     link: "https://behance.net/demo-real-estate-banner",
-    img: "/src/images/real-estate-banner.avif",
+    img: "./src/images/real-estate-banner.avif",
     category: "Banner Design"
   },
   {
     name: "YouTube Thumbnail Pack for Tech Channel",
     link: "https://behance.net/demo-youtube-thumbnail",
-    img: "/src/images/youtube-thumbnail-pack.webp",
+    img: "./src/images/youtube-thumbnail-pack.webp",
     category: "Thumbnail Design"
   },
   {
     name: "Fashion Sale Poster for Clothing Brand",
     link: "https://behance.net/demo-fashion-sale-poster",
-    img: "/src/images/fashion-sale-poster.webp",
+    img: "./src/images/fashion-sale-poster.webp",
     category: "Poster Design"
   },
   {
     name: "Startup Logo + Brand Identity Kit",
     link: "https://behance.net/demo-startup-branding",
-    img: "/src/images/startup-logo-branding.avif",
+    img: "./src/images/startup-logo-branding.avif",
     category: "Brand Identity"
   },
   {
     name: "Gym Membership Promotional Flyer",
     link: "https://behance.net/demo-gym-flyer",
-    img: "/src/images/gym-membership-flyer.avif",
+    img: "./src/images/gym-membership-flyer.avif",
     category: "Marketing Design"
   },
   {
     name: "Wedding Invitation Card Design",
     link: "https://behance.net/demo-wedding-invitation",
-    img: "/src/images/wedding-invitation-card.avif",
+    img: "./src/images/wedding-invitation-card.avif",
     category: "Invitation Design"
   },
   {
     name: "E-commerce Product Ad Creative",
     link: "https://behance.net/demo-product-ad-creative",
-    img: "/src/images/ecommerce-product-ad.webp",
+    img: "./src/images/ecommerce-product-ad.webp",
     category: "Ad Creative Design"
   },
   {
     name: "Corporate Business Profile Brochure",
     link: "https://behance.net/demo-business-brochure",
-    img: "/src/images/corporate-brochure.webp",
+    img: "./src/images/corporate-brochure.webp",
     category: "Brochure Design"
   }
 ];
