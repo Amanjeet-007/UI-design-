@@ -3,8 +3,9 @@
   --primary-color: #fff8f0;
   --primary-sec-color: rgb(252, 244, 235);
   --sec-color: #c08552;
-  --third-color: #8c5a3c;
+  --third-color: #000000;
   --fourth-color: #4b2e2b;
+  --fourth-blury-color: #4b2e2b67;
 
   /* fonts */
   --cursive: "Pacifico", cursive;
@@ -32,6 +33,8 @@ a {
   color: var(--fourth-color);
 }
 .about_me {
+  border: 2px solid var(--fourth-color);
+  backdrop-filter: blur(20px);
   height: 400px;
   width: 500px;
   position: fixed;
@@ -57,9 +60,14 @@ a {
   cursor: pointer;
 }
 .sense {
+  position:fixed;
+  top: 0px;
   height: 100vh;
   width: 100vw;
-  position: absolute;
+  z-index: 99;
+  background-color: var(--fourth-blury-color);
+  backdrop-filter: blur(15px);
+  display: none;
 }
 #home {
   position: absolute;
@@ -122,6 +130,7 @@ li:hover {
 .info {
   width: 66%;
   display: flex;
+  z-index: 99;
   align-items: center;
   padding: 10px;
   font-weight: 600;
@@ -132,7 +141,7 @@ li:hover {
 /* first page */
 .first {
   height: 100vh;
-  width: 80vw;
+  width: 100vw;
   margin-left: 20vw;
   display: flex;
   flex-direction: column;
@@ -143,35 +152,117 @@ li:hover {
   font-weight: 400;
   font-style: normal;
   position: absolute;
-  right: 0px;
-  
+  right: 0;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(192, 133, 82, 0.18), transparent 30%),
+    radial-gradient(circle at 80% 70%, rgba(255, 248, 240, 0.08), transparent 30%);
 }
+
+/* small glowing decorative circle */
+.first::before {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  top: 8%;
+  right: 8%;
+  background: rgba(192, 133, 82, 0.12);
+  filter: blur(80px);
+  z-index: 0;
+}
+
+.first::after {
+  content: "";
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  bottom: 10%;
+  left: 8%;
+  background: rgba(255, 248, 240, 0.06);
+  filter: blur(70px);
+  z-index: 0;
+}
+
 .first h1 {
-  letter-spacing: 2px;
+  letter-spacing: 3px;
   font-weight: 400;
   font-size: 150px;
   position: relative;
+  z-index: 2;
+  margin-left: 18vw;
+  text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
+  animation: floatText 3s ease-in-out infinite;
 }
+
 .first h1 span {
   font-family: var(--cursive);
   position: absolute;
-  font-size: 30px;
+  font-size: 32px;
   left: 150px;
+  top: -10px;
+  color: var(--sec-color);
+  letter-spacing: 1px;
 }
+
+/* optional subtitle if you add <p> */
+.first p {
+  font-size: 18px;
+  margin-top: 20px;
+  letter-spacing: 2px;
+  color: var(--primary-sec-color);
+  z-index: 2;
+  opacity: 0.9;
+}
+
+/* improved astro circle */
 .astro {
-  height: 80px;
-  width: 80px;
+  height: 90px;
+  width: 90px;
   overflow: hidden;
-  /* background-color: red; */
   position: absolute;
   right: 130px;
-  top: 200px;
+  top: 180px;
   border-radius: 50%;
-  font-size: 300px;
+  font-size: 280px;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 2px 2px 4px #c08552;
+  box-shadow:
+    0 0 15px rgba(192, 133, 82, 0.4),
+    0 0 30px rgba(192, 133, 82, 0.2);
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(8px);
+  z-index: 2;
+  animation: floating 4s ease-in-out infinite;
+}
+
+/* text floating effect */
+@keyframes floatText {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* astro floating effect */
+@keyframes floating {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 /* second */
@@ -185,46 +276,93 @@ li:hover {
 }
 .designs{
   width: 80%;
-  height: 80vh;
+  height: min-content;
   margin-left: 17vw;
-  margin-top: 4vh;
-  z-index: 100000;
+  margin-top: 10vh;
+  z-index: 10;
   display: flex;
   align-items: center;
   justify-content: space-around;
   flex-wrap: wrap;
+}
+
+.headline{
+  font-size: 40px;
+  font-family: var(--cursive);
+  position: absolute;
+  left: 54%;
 }
 .card{
   height: 200px;
   width: 300px;
   margin: 10px 20px;
   border: 5px solid var(--third-color);
-  border-radius: 5px;
+   border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: var(--shadow);
+  transition: 0.35s;
+  z-index: -1;
+  background-position:center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+  transition: .3s;
+}
+.card .cover{
+  height: 100%;
+  width: 100%;
+  
+}
+.card:hover{
+  scale: 1.04;
+}
+.card h2{
+  -webkit-text-stroke: .2px var(--third-color);
+  font-weight: 900;
+  transition: .3s;
+  opacity: 0;
+  margin-top: 20%;
+  text-align: center;
+  font-size: 20px;
+  color: var(--fourth-color);
+  backdrop-filter: blur(10px);
+  border-radius: 0px 0px 10px 10px;
+  background-color: rgba(156, 148, 148, 0.495);
+  width: 90%;
+  padding: 10px;
+  margin: auto;
+}
+.card p{
+  padding: 7px 15px;
+  position: absolute;
+  bottom: 0px;
+  color: #4b2e2b;
+  background-color: #fff8f0;
+  border-top-right-radius: 50px;
+}
+.card a{
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  padding: 5px;
+  background-color:#c08552;
+  border-top-left-radius: 20px;
+  
 }
 
 #desingsPath {
-  position: absolute;
   top: 0px;
-}
-.filters {
   position: absolute;
-  bottom: 40px;
-  left: 40%;
-  border-radius: 45px;
-  width: 400px;
-  height: 60px;
-  color: #4b2e2b;
-  display: flex;
 }
-.filters ul {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-}
+
 /* third */
 .third {
-  height: 100vh;
+  margin-top: 35vh;
+  height: 110vh;
   width: 80vw;
   margin-left: 20vw;
   position: relative;
@@ -234,11 +372,13 @@ li:hover {
   flex-direction: column;
 }
 .third h3 {
+  font-size: 40px;
+  left: 30%;
   font-family: var(--cursive);
 }
 .third #connect {
   position: absolute;
-  top: 0px;
+  top: 10vh;
 }
 .third form {
   background-color: var(--primary-sec-color);
@@ -297,4 +437,202 @@ form button {
   display: flex;
   width: 100%;
   flex-direction: row;
+}
+@media (max-width: 768px) {
+  nav {
+    width: 100%;
+    height: 80px;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+
+  .logo {
+    width: 120px;
+    height: 60px;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .options {
+    position: static;
+    background: transparent;
+    width: auto;
+    bottom: unset;
+  }
+
+  .options ul {
+    flex-direction: row;
+    padding: 0;
+    gap: 10px;
+  }
+
+  .options li {
+    margin: 0;
+    padding: 8px 12px;
+    font-size: 14px;
+    margin-left: 0;
+  }
+
+  .info {
+    display: none;
+  }
+
+  .first,
+  .second,
+  .third {
+    width: 100%;
+    margin-left: 0;
+    padding: 100px 20px 40px;
+    position: relative;
+  }
+
+   .first {
+    width: 100%;
+    margin-left: 0;
+    padding: 120px 20px 40px;
+    min-height: 100vh;
+    height: auto;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .first::before {
+    width: 140px;
+    height: 140px;
+    top: 8%;
+    right: 5%;
+    filter: blur(30px);
+  }
+
+  .first::after {
+    width: 180px;
+    height: 180px;
+    bottom: 8%;
+    left: 5%;
+    filter: blur(40px);
+  }
+
+  .first h1 {
+    left: -8vw;
+    font-size: 52px;
+    line-height: 1.3;
+    letter-spacing: 1px;
+    padding: 0 10px;
+  }
+
+  .first h1 span {
+    position: static;
+    display: block;
+    font-size: 22px;
+    margin-bottom: 12px;
+    text-align: center;
+  }
+
+  .first p {
+    font-size: 15px;
+    margin-top: 15px;
+    padding: 0 15px;
+    line-height: 1.6;
+  }
+
+  .astro {
+    width: 60px;
+    height: 60px;
+    font-size: 180px;
+    right: 20px;
+    top: 100px;
+    box-shadow:
+      0 0 10px rgba(192, 133, 82, 0.3),
+      0 0 20px rgba(192, 133, 82, 0.15);
+  }
+
+  .second {
+    margin-top: 0;
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .headline {
+    position: static;
+    font-size: 32px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .designs {
+    width: 100%;
+    margin: 0;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 320px;
+    height: 220px;
+    margin: 0;
+  }
+
+  .third {
+    margin-top: 50px;
+    height: auto;
+  }
+
+  .third h3 {
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .third form {
+    width: 100%;
+    padding: 30px 20px 100px;
+  }
+
+  form input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  form textarea {
+    width: 100%;
+  }
+
+  form button {
+    width: 80%;
+    top: auto;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    translate: 0;
+  }
+
+  .social_media {
+    position: static;
+    margin-top: 40px;
+    margin-left: -40px;
+    justify-content: center;
+  }
+
+  .social_media ul {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    padding: 0;
+  }
+
+  .about_me {
+    width: 90%;
+    height: auto;
+    left: 50%;
+    top: 20%;
+    transform: translateX(-50%);
+  }
 }
