@@ -72,7 +72,7 @@ const projects = [
   {
     name: "Instagram Brand Post Design for Coffee Shop",
     link: "https://behance.net/demo-coffee-brand-post",
-    img: "./src/images/coffee-brand-post.webp",
+    img: "./src/images/coffee-brand-post.avif",
     category: "Social Media Design"
   },
   {
@@ -128,6 +128,12 @@ const projects = [
     link: "https://behance.net/demo-business-brochure",
     img: "./src/images/corporate-brochure.webp",
     category: "Brochure Design"
+  },
+   {
+    name: "UI/UX",
+    link: './designs/uiux.html',
+    img: "./src/images/uiux.avif",
+    category: "UI UX Design"
   }
 ];
 
